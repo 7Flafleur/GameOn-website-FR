@@ -11,11 +11,13 @@ function editNav() {
 
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
+const form = document.querySelector(".reserve");
 const formData = document.querySelectorAll(".formData");
 
 //concerns closing modal
 const cross = document.getElementById("cross");
 const cross2=document.getElementById("cross2");
+const abientot = document.getElementById("abientot");
 
 //concerns switching modals
 const hi =document.querySelector(".hi");
@@ -27,17 +29,21 @@ const cparti = document.getElementById("cparti");
 var enterpressed=false;
 
 
+/////////////EVENTLISTENERS////////////
+
+cross.addEventListener("click",closeModal);
+cross2.addEventListener("click",closeModal);
+abientot.addEventListener("click",closeModal);
+
+
+
 /////////////////////////////FUNCTIONS///////////////////////
 
 
 
 
-// launch modal event  FUNCTION
+// launch modal event  
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
-
-cross.addEventListener("click",closeModal);
-cparti.addEventListener("click",switchmodal);
-cross2.addEventListener("click",closeModal);
 
 
 
@@ -46,6 +52,7 @@ cross2.addEventListener("click",closeModal);
 function launchModal() {
   modalbg.style.display = "block";
   hi.style.display = "block";
+  bye.style.display ="none";
   console.log("test");
 }
 
@@ -59,42 +66,76 @@ function closeModal() {
 
 //switch modal hi to bye
 
-function switchmodal(){
-  hi.style.display="none";
-  bye.style.display="flex";
-  ;
-  console.log("Merci pour votre inscription!");
+// function switchmodal(){
+//   if (validfirst()){
+//   console.log(validfirst());
+//   hi.style.display="none";
+//   bye.style.display="flex";
+//   ;
+//   console.log("Merci pour votre inscription!");
+//   }
 
-}
+// }
 
 
 //Form validation functions
 
 
-function validfirst() {
-  if (first.value.length<2){
-    document.getElementById("prenom").style.display="inline";
-    console.log("invalid first name!")
+// function validfirst() {
+//   if (first.value.length<2){
+//     document.getElementById("prenom").style.display="inline";
+//     console.log("invalid first name!")
+//     return false;
+//   }
+//   else{
+//     document.getElementById("prenom").style.display="none";
+//     console.log("valid first name");
+//     return true;
+//   }
+
+// }
+
+
+function validLast(){
+  if (last.value.length<2){
+    document.getElementById("nom").style.display="inline";
+    console.log("invalid last name!")
+    return false;
   }
   else{
-    document.getElementById("prenom").style.display="none";
-    console.log("valid first name");
+    document.getElementById("nom").style.display="none";
+    console.log("valid last name");
+    return true;
   }
+
+
 }
+
+
+
 
 //chekc for enter pressed
 
-first.addEventListener('keydown', (event) => {
-  if (event.key === 'Enter') {
-    console.log('Enter key pressed!');
-    enterpressed=true;
+// first.addEventListener('keydown', (event) => {
+//   if (event.key === 'Enter') {
+//     console.log('Enter key pressed!');
+//     enterpressed=true;
+//   }
+// });
 
-  }
-  if (enterpressed){
-    validfirst();
-  }
-});
+// last.addEventListener('keydown', (event) => {
+//   if (event.key === 'Enter') {
+//     console.log('Enter key pressed!');
+//     enterpressed=true;
+//   }
+// });
 
+
+////CODE////
+
+// if (enterpressed){
+//   validfirst();
+// }
 
 
 
