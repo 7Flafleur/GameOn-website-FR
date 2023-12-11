@@ -72,8 +72,8 @@ let tournamentsnb=new RegExp("^[0123456789]+")
 
 
 
-// launch modal event  
-modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
+// launch modal event  BYE
+modalBtn.forEach((btn) => btn.addEventListener("click", launchbye));
 
 cross.addEventListener("click",closeModal);
 //cparti.addEventListener("click",switchmodal);
@@ -89,6 +89,12 @@ function launchModal() {
   modalbg.style.display = "block";
   hi.style.display = "block";
   console.log("test");
+}
+
+function launchbye() {
+  modalbg.style.display = "block";
+  bye.style.display="block";
+
 }
 
 // close modal 

@@ -51,32 +51,11 @@ let tournamentsnb=new RegExp("^[0123456789]+")
 
 
 
-////////////OTHER VARIQBLES//////////////////////
-
-
-
-
-
-
-
-//EVENT LISTENERS/////////
-
-
-//
-
-// first.addEventListener("change",validfirst);
-// last.addEventListener("change",validlast);
-// mail.addEventListener("change",validmel);
- //quantity.addEventListener("change",onechecked);
-
-
-
-
 // launch modal event  
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
+//event listeners///
 cross.addEventListener("click",closeModal);
-//cparti.addEventListener("click",switchmodal);
 cross2.addEventListener("click",closeModal);
 abientot.addEventListener("click",closeModal);
 
@@ -118,7 +97,7 @@ function switchmodal(){
 
 //check if one location chosen
 function onechecked(){
-  for (var i=0;i<locations.length;i++){             //i of locations?
+  for (var i=0;i<locations.length;i++){             
     if(locations[i].checked){
       return true;
     }
@@ -129,59 +108,6 @@ function onechecked(){
 
 
 
-//Form validation functions////////////
-
-// function validfirst(variable) {
-//   if (variable.length<2){
-//     document.getElementById("prenom").style.display="inline";
-//     console.log("invalid first name!");
-//   }
-//   else{
-//     console.log("valid first name");
-//     validated.add("first");
-//     console.log(validated)
-//   }
-// };
-
-// function validlast(variable){
-//   if (variable.length<2){
-//     document.getElementById("nom").style.display="inline";
-//     console.log("invalid last name!")
-//   }
-//   else{
-    
-//     console.log("valid last name");
-//     validated.add("last");
-//     console.log(validated);
-//   }
-// };
-
-// function validmel(variable){
-// if(!regexmel.test(variable)){
-//   document.getElementById("mel").style.display="inline";
-//   console.log("Invalid email");
-// }
-// else{
-//   console.log("Valid email");
-//   validated.add("mail");
-// }
-// };
-
-// function validbdate(variable){
-//   if (typeof variable != 'number'){
-//     throw new BdateError ()
-//   }
-// };
-
-// function validquantity(variable){
-
-// };
-
-// function termschecked(checkbox){};
-// ;
-
-
-////CODE////////
 
 
 
@@ -189,9 +115,10 @@ form.addEventListener("submit", (event) => {
   
         event.preventDefault();
 
-        if(isformcomplete()==="true"){
+       if(isformcomplete()===true){
           switchmodal();
-        }
+          }
+        
         
 })
 
@@ -202,40 +129,38 @@ function isformcomplete(){
   //first name
   if (first.value.length<2){
     prenom.style.display="inline";
-    console.log("invalid first name!");
   }
 
   //last name
   if (last.value.length<2){
     nom.style.display="inline";
-    console.log("invalid last name!")
   }
 
   if(!regexmel.test(mail.value)){
     mel.style.display="inline";
-    console.log("Invalid email");
   }
 
   if (bdate.value===""){
     daten.style.display="inline";
-    console.log("Invalid bdate")
   }
 
   if (!parseInt(tournaments.value)>0){
     nombre.style.display="inline";
-    console.log("Invalid tournament number")
   }
 
   if (!onechecked())  {
       nolocation.style.display="inline";
-      console.log("No location checked")
     };
 
   if(!terms.checked){
     noterms.style.display="inline";
-    console.log("Terms not checked")
   }
+
+  else{
   return true;
+
+ }
+  
  //end function/// 
 
 }

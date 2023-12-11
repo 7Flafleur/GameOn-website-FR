@@ -69,51 +69,52 @@
             >
               <div
                 class="formData">
-                <span class="inputName"><label for="first">Prénom</label> <span class="invalidInput" id="prenom">Veuillez entrer deux caractères ou plus!</span></span> 
+                <span class="inputName"><label for="first">Prénom</label> </span> 
                 <input
                   class="text-control noms"
                   type="text"
                   id="first"
                   name="first"
                   minlength="2"
-                /><br>
+                /><span class="invalidInput" id="prenom">Veuillez entrer deux caractères ou plus!</span>
+                <br>
               </div>
               <div
                 class="formData">
-                <span class="inputName"><label for="last" >Nom</label><span class="invalidInput" id="nom">Veuillez entrer deux caractères ou plus!</span></span>
+                <span class="inputName"><label for="last" >Nom</label></span>
                 <input
                   class="text-control noms"
                   type="text"
                   id="last"
                   name="last"
-                /><br>
+                /><span class="invalidInput" id="nom">Veuillez entrer deux caractères ou plus!</span><br>
               </div>
               <div
                 class="formData">
                 <span class="inputName">
                   <label for="email" >E-mail</label>
-                  <span class="invalidInput" id="mel">Merci de renseigner un email valide!</span>
+                  
                 </span>
                 <input
                   class="text-control"                
                   id="email"
                   name="email"
-                /><br>
+                /><span class="invalidInput" id="mel">Merci de renseigner un email valide!</span><br>
               </div>
               <div
                 class="formData">
-                <span class="inputName" id="bday"><label  for="birthdate">Date de naissance</label><br><span class="invalidInput" id="daten">Merci d'entrer une date de naissance valide!</span></span>
+                <span class="inputName" id="bday"><label  for="birthdate">Date de naissance</label><br></span>
                 <input
                   class="text-control"
                   type="date"
                   id="birthdate"
                   name="birthdate"
-                /><br>
+                /><span class="invalidInput" id="daten">Merci d'entrer une date de naissance valide!</span><br>
               </div>
               <div
                 class="formData">
-                <label for="quantity" >À combien de tournois GameOn avez-vous déjà participé ?</label><br><span class="invalidInput" id="nombre">Merci d'entrer un nombre valide!</span>
-                <input type="number" class="text-control" id="quantity" name="quantity">
+                <label for="quantity" >À combien de tournois GameOn avez-vous déjà participé ?</label><br>
+                <input type="number" class="text-control" id="quantity" name="quantity"> <span class="invalidInput" id="nombre">Merci d'entrer un nombre valide!</span>
               </div>
               <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
               <div
@@ -227,9 +228,9 @@
 
          <!--end Modalexit--> 
         </div>
-        <div class="content bye">
+        <div class="content ">
           <span class="close closes" id="cross2"></span>
-          <div class="modal-body "><div class="merci">Merci pour votre inscription!</div>
+          <div class="modal-body bye"><div class="merci">Merci pour votre inscription!</div>
             <label for="abientot">
               <input
               class="btn-submit exit"

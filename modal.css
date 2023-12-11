@@ -203,6 +203,9 @@ main {
 
 .bye {
   display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 83vh;
 }
 
 .bye .modal-body {
@@ -222,7 +225,7 @@ label {
   font-size: 17px;
   font-weight: normal;
   display: inline;
-  margin-bottom: 11px;
+  margin-bottom: 5px;
 }
 input {
   padding: 8px;
