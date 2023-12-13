@@ -170,13 +170,14 @@ function isformcomplete(){
     daten.style.display="inline";
   }
 
-  if (!100>parseInt(tournaments.value)>0){
+  if (!tournamentsnb.test(tournaments.value)){
     nombre.style.display="inline";
   }
 
   if (!onechecked())  {
       nolocation.style.display="inline";
     };
+
 
   if(!terms.checked){
     noterms.style.display="inline";
