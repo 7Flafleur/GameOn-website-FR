@@ -24,7 +24,7 @@ const cparti = document.getElementById("cparti");
 
 //form data
 
-const form = document.getElementById("reserve");  //ensemble 
+const form = document.getElementById("reserve");   
 const first = document.getElementById("first");
 const last = document.getElementById("last");
 const mail = document.getElementById("email");
@@ -58,6 +58,21 @@ modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 cross.addEventListener("click",closeModal);
 cross2.addEventListener("click",closeModal);
 abientot.addEventListener("click",closeModal);
+
+////OTHER VARIABLES////
+
+let bd= bdate.value.replaceAll("-",",");                      // change separator in birthdate value
+let bday = new Date(bd);                                       // convert birthdate value to  date object
+let today = new Date();                                        // get current date
+
+let age = parseInt(today.getFullYear()-bday.getFullYear());
+
+
+
+
+
+
+
 
 /////////////////////////////FUNCTIONS///////////////////////
 
@@ -105,15 +120,26 @@ function onechecked(){
   }
 }
 
+//correct if birthday yet to come at current date//
+function notyet(bday,today,age){
+  if (today.getMonth()<bday.getMonth()|| (today.getDate() < bday.getDate() && today.getMonth()==bday.getMonth()))
+  {
+    age-=1;
+  }
+  return age;
+  };
 
 
+///CODE////
 
 
-
+  let userage = notyet(bday,today,age);
 
 form.addEventListener("submit", (event) => {
   
         event.preventDefault();
+
+       
 
        if(isformcomplete()===true){
           switchmodal();
@@ -140,11 +166,11 @@ function isformcomplete(){
     mel.style.display="inline";
   }
 
-  if (bdate.value===""){
+  if (userage < 18){
     daten.style.display="inline";
   }
 
-  if (!parseInt(tournaments.value)>0){
+  if (!100>parseInt(tournaments.value)>0){
     nombre.style.display="inline";
   }
 

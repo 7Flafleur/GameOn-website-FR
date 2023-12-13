@@ -285,12 +285,7 @@ input {
 
 
 
-/* 
-input[data-error]::after {
-    content: attr(data-error);
-    font-size: 0.4em;
-    color: red;
-} */
+
 .checkbox-label,
 .checkbox2-label {
   position: relative;
@@ -522,6 +517,7 @@ input[data-error]::after {
   height: 100%;
   display: flex;
   padding: 0;
+  object-fit: cover;
 }
 .copyrights {
   color: #fe142f;
