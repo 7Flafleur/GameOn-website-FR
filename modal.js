@@ -139,6 +139,7 @@ form.addEventListener("submit", (event) => {
         
 })
 
+let error=0;
 
 function isformcomplete(){
   //start function///
@@ -146,40 +147,48 @@ function isformcomplete(){
   //first name
   if (first.value.length<2){
     prenom.style.display="inline";
+    error+=1;
+  
   }
 
   //last name
   if (last.value.length<2){
     nom.style.display="inline";
+    error+=1;
   }
 
   if(!regexmel.test(mail.value)){
     mel.style.display="inline";
+    error+=1;
   }
 
   if (bdate.value=="" || ! age>0){
     daten.style.display="inline";
+    error+=1;
   }
 
 
   if (!tournamentsnb.test(tournaments.value)){
     nombre.style.display="inline";
+    error+=1;
   }
 
   if (!onechecked())  {
       nolocation.style.display="inline";
+      error+=1;
     };
 
 
   if(!terms.checked){
     noterms.style.display="inline";
+    error+=1;
   }
   
-
-  else{
+  if (error !=0){
+    return false;
+  }
   return true;
 
- }
   
  //end function/// 
 
