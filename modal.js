@@ -65,7 +65,7 @@ let bd= bdate.value.replaceAll("-",",");                      // change separato
 let bday = new Date(bd);                                       // convert birthdate value to  date object
 let today = new Date();                                        // get current date
 
-let age = parseInt(today.getFullYear()-bday.getFullYear());
+let age = (today.getTime()-bday.getTime())/31583664338 ;
 
 
 
@@ -166,9 +166,10 @@ function isformcomplete(){
     mel.style.display="inline";
   }
 
-  if (userage < 18){
+  if (bdate.value=="" || age<=0){
     daten.style.display="inline";
   }
+
 
   if (!tournamentsnb.test(tournaments.value)){
     nombre.style.display="inline";
