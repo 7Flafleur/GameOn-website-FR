@@ -99,7 +99,6 @@ function closeModal() {
 }
 
 
-
 //switch modal hi to bye
 
 function switchmodal(){
@@ -120,20 +119,12 @@ function onechecked(){
   }
 }
 
-//correct if birthday yet to come at current date//
-function notyet(bday,today,age){
-  if (today.getMonth()<bday.getMonth()|| (today.getDate() < bday.getDate() && today.getMonth()==bday.getMonth()))
-  {
-    age-=1;
-  }
-  return age;
-  };
 
 
 ///CODE////
 
 
-  let userage = notyet(bday,today,age);
+
 
 form.addEventListener("submit", (event) => {
   
@@ -166,7 +157,7 @@ function isformcomplete(){
     mel.style.display="inline";
   }
 
-  if (bdate.value=="" || age<=0){
+  if (bdate.value=="" || ! age>0){
     daten.style.display="inline";
   }
 
@@ -183,6 +174,7 @@ function isformcomplete(){
   if(!terms.checked){
     noterms.style.display="inline";
   }
+  
 
   else{
   return true;

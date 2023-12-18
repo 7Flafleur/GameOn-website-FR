@@ -68,18 +68,16 @@ img {
   display: none;
 }
 
-/* VERSION TABLETTE*/
-@media screen and (max-width: 768px) {
-  .topnav a {
-    display: none;
-  }
+VERSION TABLETTE
+@media screen and (max-width: 1024px) {
+ */
   .topnav a.icon {
     float: right;
     display: block;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .topnav {
     position: relative;
   }
@@ -198,6 +196,7 @@ main {
 }
 
 .bye .modal-body {
+  display:flex;
   height: 100%;
   flex-direction: column;
   justify-content: center;
@@ -458,6 +457,7 @@ input {
   position: relative;
   text-align: left;
   min-width: 424px;
+  
 }
 .hero-content::after {
   content: "";
@@ -473,9 +473,9 @@ input {
   z-index: 1;
 }
 .hero-headline {
-  font-size: 6rem;
-  font-weight: normal;
-  white-space: nowrap;
+  font-size: 40px;
+  font-weight: 500;
+  /* white-space: nowrap; */
 }
 .hero-text {
   width: 146%;
@@ -528,6 +528,7 @@ footer {
     background: #fff;
     color: #000;
     padding: 20px;
+
   }
   .hero-content::after {
     content: unset;
