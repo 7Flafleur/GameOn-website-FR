@@ -14,7 +14,7 @@ body {
   margin: 0;
   display: flex;
   flex-direction: column;
- 
+
   font-family: var(--font-default);
   font-size: 18px;
   max-width: 1300px;
@@ -31,7 +31,6 @@ img {
 }
 
 .topnav {
-  
   margin: 3.5%;
 }
 .header-logo {
@@ -63,28 +62,11 @@ img {
   background-color: #ff0000;
   color: #ffffff;
   border-radius: 15px;
-  
 }
 
 .topnav .icon {
   display: none;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* VERSION TABLETTE*/
 @media screen and (max-width: 768px) {
@@ -95,14 +77,11 @@ img {
     float: right;
     display: block;
   }
-
-
 }
 
 @media screen and (max-width: 768px) {
   .topnav {
     position: relative;
-
   }
   .topnav.icon {
     position: absolute;
@@ -115,16 +94,6 @@ img {
     text-align: left;
   }
 }
-
-
-
-
-
-
-
-
-
-
 
 main {
   font-size: 130%;
@@ -161,7 +130,6 @@ main {
 }
 
 /* Modal form */
-
 
 .button {
   background: #fe142f;
@@ -287,8 +255,8 @@ input {
   align-items: baseline;
 }
 
-#bday{
-  display:inline;
+#bday {
+  display: inline;
 }
 
 .invalidInput {
@@ -299,9 +267,6 @@ input {
   text-align: center;
   justify-content: end;
 }
-
-
-
 
 .checkbox-label,
 .checkbox2-label {
@@ -552,110 +517,7 @@ footer {
   margin: 0 20px;
 }
 
-
-
-/*VERSION MOBILE*/
-
-@media screen and (max-width: 540px) {
-
-
-
-  #mytopnav{
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    border: dotted red;
-  }
-
-  .topnav{
-    display:flex;
-    justify-content: space-between;
-    align-items: center;
-    border: dotted red;
-    margin: 33px 30px;
-
-  }
-
-  .topnav a {
-    display: none;
-  }
-  .topnav a.icon {
-    float: right;
-    display: block;
-    margin-top: -15px;
-  }
-  .header-logo{
-    width:109px;
-    height:19px;
-
-  }
-
-  .fa{
-    color: #fe142f;
-    width: 19px;
-height: 13.5px;
-flex-shrink: 0;
-padding-top: 20px;;
-  }
-
-  .hero-content{
-    border: dotted yellow;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 354px;
-  }
-
-  .hero-headline{
-    border: dotted greenyellow;
-    width: 354px;
-height: 109px;
-flex-shrink: 0;
-color: #000;
-font-family: DM Sans;
-font-size: 40px;
-font-style: normal;
-font-weight: 500;
-line-height: normal;
-  }
-
-  .hero-text{
-    width: 341px;
-    border: dotted blue;
-
-
-  }
-
-
-/* .bground{
-  width: 414px;
-height: 657px;
-flex-shrink: 0;
-} */
-
-
-
-
-
-
-
-
-  
-}
-
-/*END MOBILE*/
-
-
-
-
-
-
-
-
-
-
 /*VERSION TABLETTE*/
-
 
 @media screen and (max-width: 800px) {
   .hero-section {
@@ -676,11 +538,11 @@ flex-shrink: 0;
   .hero-headline {
     font-size: 40px;
     white-space: normal;
-    font-weight: 50;;
+    /* font-weight: 50; */
   }
   .hero-text {
     width: 100%;
-    font-size: 1.5rem;
+    /* font-size: 1.5rem; */
   }
   .hero-img img {
     border-radius: 10px;
@@ -696,6 +558,117 @@ flex-shrink: 0;
     text-align: center;
   }
 }
+
+/*VERSION MOBILE*/
+
+@media screen and (max-width: 540px) {
+  #mytopnav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border: dotted red; */
+  }
+
+  .topnav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border: dotted red; */
+    margin: 30px 30px 0  30px;
+  }
+
+  .topnav a {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+    margin-top: -15px;
+  }
+  .header-logo {
+    width: 109px;
+    height: 19px;
+  }
+
+  .fa {
+    color: #fe142f;
+    width: 19px;
+    height: 13.5px;
+    flex-shrink: 0;
+    padding-top: 20px;
+  }
+
+  .hero-content {
+    /* border: dotted yellow; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 354px;
+    min-width: 300px;
+  }
+
+  .hero-headline {
+    /* border: dotted greenyellow; */
+    width: 354px;
+    height: 109px;
+    flex-shrink: 0;
+    color: #000;
+    font-family: DM Sans;
+    font-size: 40px;
+    font-style: bold;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .hero-text {
+    width: 354px;
+    /* border: dotted blue; */
+    color: #000;
+    font-family: DM Sans;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 0;
+    word-spacing: 5px;
+    margin-top: 30px;
+  }
+
+  .hero-text > p {
+    width: 300px;
+  }
+
+  .hero-img img{
+    margin-top: 20px;
+  }
+
+  .bground{
+    width: 414px;
+height: 657px;
+flex-shrink: 0;
+  }
+
+  .locs{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    padding: 5px 0;
+    
+
+  }
+
+  .trms{
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+    padding: 5px 0;
+    align-items: flex-start;
+  }
+
+  /*END MOBILE*/
+}
+
+/**********/
 
 @keyframes modalopen {
   from {
