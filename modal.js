@@ -61,14 +61,15 @@ abientot.addEventListener("click",closeModal);
 
 ////OTHER VARIABLES////
 
-let bd= bdate.value.replaceAll("-",",");                      // change separator in birthdate value
-let bday = new Date(bd);                                       // convert birthdate value to  date object
-let today = new Date();                                        // get current date
-
-let age = (today.getTime()-bday.getTime())/31583664338 ;
+let bd=bdate.value;
 
 
+let bday = new Date(bd).getFullYear();                              // convert birthdate value to  date object
+let today = new Date().getFullYear();                                        // get current date
 
+
+
+let age = (today-bday);
 
 
 
@@ -162,7 +163,7 @@ function isformcomplete(){
     error+=1;
   }
 
-  if (bdate.value=="" || ! age>0){
+  if (bd==""){
     daten.style.display="inline";
     error+=1;
   }
