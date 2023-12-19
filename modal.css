@@ -70,25 +70,6 @@ img {
 
 
 
-@media screen and (max-width: 1024px) {
-  .topnav {
-    position: relative;
-  }
-  .topnav.icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .topnav a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-
-  .hero-headline{
-    white-space: text-wrap;
-  }
-}
 
 main {
   font-size: 130%;
@@ -173,6 +154,21 @@ main {
 .modal-body {
   padding: 15px 8%;
   margin: 15px auto;
+}
+
+.locs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  padding: 5px 0;
+}
+
+.trms {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 5px 0;
+  align-items: flex-start;
 }
 
 .merci {
@@ -513,7 +509,28 @@ footer {
   margin: 0 20px;
 }
 
-/*VERSION TABLETTE*/
+/*RESPONSIVE*/
+
+@media screen and (max-width: 1024px) {
+  .topnav {
+    position: relative;
+  }
+  .topnav.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  .hero-headline{
+    white-space: normal;
+  }
+}
+
 
 @media screen and (max-width: 800px) {
   .hero-section {
@@ -644,20 +661,7 @@ footer {
     flex-shrink: 0;
   }
 
-  .locs {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    padding: 5px 0;
-  }
 
-  .trms {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    padding: 5px 0;
-    align-items: flex-start;
-  }
 
   /*END MOBILE*/
 }
