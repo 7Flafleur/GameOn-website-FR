@@ -59,18 +59,6 @@ cross.addEventListener("click",closeModal);
 cross2.addEventListener("click",closeModal);
 abientot.addEventListener("click",closeModal);
 
-////OTHER VARIABLES////
-
-let bd= bdate.value.replaceAll("-",",");                      // change separator in birthdate value
-let bday = new Date(bd);                                       // convert birthdate value to  date object
-let today = new Date();                                        // get current date
-
-let age = (today.getTime()-bday.getTime())/31583664338 ;
-
-
-
-
-
 
 
 
