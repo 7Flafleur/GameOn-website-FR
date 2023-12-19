@@ -470,9 +470,9 @@ input {
   z-index: 1;
 }
 .hero-headline {
-  font-size: 40px;
+  font-size: 96px;
   font-weight: 500;
-  /* white-space: nowrap; */
+   white-space: nowrap; 
 }
 .hero-text {
   width: 146%;
