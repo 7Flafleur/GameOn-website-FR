@@ -150,7 +150,7 @@ function isformcomplete(){
     error+=1;
   }
 
-  if (bdate.value=="" || ! age>0){
+  if (bdate.value=="" ){
     daten.style.display="inline";
     error+=1;
   }
