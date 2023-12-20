@@ -1,5 +1,5 @@
 function editNav() {
-  var x = document.getElementById("myTopnav");
+  let x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
     x.className += " responsive";
   } else {
@@ -59,6 +59,24 @@ cross.addEventListener("click",closeModal);
 cross2.addEventListener("click",closeModal);
 abientot.addEventListener("click",closeModal);
 
+//check validity on change
+
+  
+// last.addEventListener();
+// mail.addEventListener();
+// bdate.addEventListener();
+// tournaments.addEventListener();
+// locations.addEventListener();
+// terms.addEventListener();
+
+//reinit validitycheck on focus
+
+first.addEventListener("change", firstname)
+
+first.addEventListener("focus",firstname)
+
+
+
 
 
 
@@ -82,8 +100,6 @@ function closeModal() {
   form.reset();
   console.log("Form cleared");
   location.reload();
-  
-
 }
 
 
@@ -97,6 +113,47 @@ function switchmodal(){
 
 }
 
+
+
+
+function firstname(){
+  if (first.value.length<2){
+    prenom.style.display="inline";
+    error+=1;
+  }
+};
+
+function lastname(){
+  if (last.value.length<2){
+    nom.style.display="inline";
+    error+=1;
+  }
+};
+
+function melcheck(){
+  if(!regexmel.test(mail.value)){
+    mel.style.display="inline";
+    error+=1;
+  }
+};
+
+function dob(){
+  if (bdate.value=="" ){
+    daten.style.display="inline";
+    error+=1;
+  }
+
+};
+
+function history(){
+  if (!tournamentsnb.test(tournaments.value)){
+    nombre.style.display="inline";
+    error+=1;
+  }
+};
+
+
+
 //check if one location chosen
 function onechecked(){
   for (var i=0;i<locations.length;i++){             
@@ -106,6 +163,22 @@ function onechecked(){
 
   }
 }
+
+function notchecked(){
+  if (!onechecked())  {
+    nolocation.style.display="inline";
+    error+=1;
+  };
+}
+
+function termsunchecked(){
+  if(!terms.checked){
+    noterms.style.display="inline";
+    error+=1;
+  }
+};
+
+
 
 
 
@@ -124,6 +197,8 @@ form.addEventListener("submit", (event) => {
           switchmodal();
           }
         
+
+        
         
 })
 
@@ -133,42 +208,36 @@ function isformcomplete(){
   //start function///
 
   //first name
-  if (first.value.length<2){
-    prenom.style.display="inline";
+  if (firstname()){
     error+=1;
-  
   }
+
 
   //last name
-  if (last.value.length<2){
-    nom.style.display="inline";
-    error+=1;
-  }
-
-  if(!regexmel.test(mail.value)){
-    mel.style.display="inline";
-    error+=1;
-  }
-
-  if (bdate.value=="" ){
-    daten.style.display="inline";
+  if (lastname()){
     error+=1;
   }
 
 
-  if (!tournamentsnb.test(tournaments.value)){
-    nombre.style.display="inline";
+  if(melcheck()){
     error+=1;
   }
 
-  if (!onechecked())  {
-      nolocation.style.display="inline";
+  if (dob() ){
+    error+=1;
+  }
+
+
+  if (history()){
+    error+=1;
+  }
+
+  if (notchecked())  {
       error+=1;
     };
 
 
-  if(!terms.checked){
-    noterms.style.display="inline";
+  if(termsunchecked){
     error+=1;
   }
   
@@ -176,7 +245,6 @@ function isformcomplete(){
     return false;
   }
   return true;
-
   
  //end function/// 
 

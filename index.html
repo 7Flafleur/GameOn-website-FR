@@ -69,29 +69,30 @@
               
             >
               <div
-                class="formData">
+                class="formData"                   data-error="Veuillez entrer deux caractères ou plus!"
+                data-error-visible="false">
                 <span class="inputName"><label for="first">Prénom</label> </span> 
                 <input
                   class="text-control noms"
                   type="text"
                   id="first"
                   name="first"
-                  minlength="2"
-                /><span class="invalidInput" id="prenom">Veuillez entrer deux caractères ou plus!</span>
+
+                />
                 <br>
               </div>
               <div
-                class="formData">
+                class="formData" data-error="Veuillez entrer deux caractères ou plus!" data-error-visible="false">
                 <span class="inputName"><label for="last" >Nom</label></span>
                 <input
                   class="text-control noms"
                   type="text"
                   id="last"
                   name="last"
-                /><span class="invalidInput" id="nom">Veuillez entrer deux caractères ou plus!</span><br>
+                />
               </div>
               <div
-                class="formData">
+                class="formData"  data-error="Merci de renseigner un email valide!" data-error-visible="false">
                 <span class="inputName">
                   <label for="email" >E-mail</label>
                   
@@ -100,26 +101,26 @@
                   class="text-control"                
                   id="email"
                   name="email"
-                /><span class="invalidInput" id="mel">Merci de renseigner un email valide!</span><br>
+                />
               </div>
               <div
-                class="formData">
+                class="formDate" data-error="Merci d'entrer une date de naissance valide!" data-error-visible="false">
                 <span class="inputName" id="bday"><label  for="birthdate">Date de naissance</label><br></span>
                 <input
                   class="text-control"
                   type="date"
                   id="birthdate"
                   name="birthdate"
-                /><span class="invalidInput" id="daten">Merci d'entrer une date de naissance valide!</span><br>
+                />
               </div>
               <div
-                class="formData">
+                class="formData" data-error="Merci d'entrer un nombre valide!" data-error-visible="false">
                 <label for="quantity" >À combien de tournois GameOn avez-vous déjà participé ?</label><br>
-                <input type="number" class="text-control" id="quantity" name="quantity"> <span class="invalidInput" id="nombre">Merci d'entrer un nombre valide!</span>
+                <input type="number" class="text-control" id="quantity" name="quantity"> <span class="invalidInput" id="nombre"></span>
               </div>
               <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
               <div
-                class="formData locs">
+                class="formData locs" data-error="Merci de choisir une option! " data-error-visible="false">
                 <input
                   class="checkbox-input"
                   type="radio"
@@ -187,10 +188,10 @@
                   Portland</label
                 >
               </div>
-              <div class="invalidInput" id="nolocation"> Merci de choisir une option! </div>
+              <div class="invalidInput" id="nolocation"> </div>
 
               <div
-                class="formData trms">
+                class="formData trms" data-error="Merci d'accepter les termes et conditions!" data-error-visible="false">
                 <input
                   class="checkbox-input"
                   type="checkbox"
@@ -202,7 +203,7 @@
                   J'ai lu et accepté les conditions d'utilisation.
                 </label>
                 <br>
-                <span class="invalidInput" id="noterms">Merci d'accepter les termes et conditions!</span><br>
+               
 
                 <input class="checkbox-input" type="checkbox" id="newsletter" />
                 <label   class="checkbox2-label" for="newsletter">
