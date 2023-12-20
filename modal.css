@@ -256,6 +256,22 @@ input {
   display: inline;
 }
 
+.locs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  padding: 5px 0;
+}
+
+.trms {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 5px 0;
+  align-items: flex-start;
+}
+
+
 .invalidInput {
   display: none;
   color: #ff0000;
@@ -645,20 +661,6 @@ footer {
     flex-shrink: 0;
   }
 
-  .locs {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    padding: 5px 0;
-  }
-
-  .trms {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    padding: 5px 0;
-    align-items: flex-start;
-  }
 
   /*END MOBILE*/
 }

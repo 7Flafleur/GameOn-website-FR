@@ -45,8 +45,8 @@ const nolocation=document.getElementById("nolocation");
 
 //regex
 
-let regexmel=new RegExp("[a-z0-9._-]+@[a-z0-9._-]+\.[a-z0-9._-]+")
-let tournamentsnb=new RegExp("^[0123456789]+")
+const regexmel=new RegExp("[a-z0-9._-]+@[a-z0-9._-]+\.[a-z0-9._-]+")
+const tournamentsnb=new RegExp("^[0123456789]+")
 
 
 
@@ -59,15 +59,13 @@ cross.addEventListener("click",closeModal);
 cross2.addEventListener("click",closeModal);
 abientot.addEventListener("click",closeModal);
 
-////OTHER VARIABLES////
-
-let bd=bdate.value;
 
 
-let bday = new Date(bd).getFullYear();                              // convert birthdate value to  date object
+//CALCULATE AGE AND CHECK////
+
+
+let bday = new Date(bdate.value).getFullYear();                              // convert birthdate value to  date object
 let today = new Date().getFullYear();                                        // get current date
-
-
 
 let age = (today-bday);
 
@@ -120,28 +118,6 @@ function onechecked(){
   }
 }
 
-
-
-///CODE////
-
-
-
-
-form.addEventListener("submit", (event) => {
-  
-        event.preventDefault();
-
-       
-
-       if(isformcomplete()===true){
-          switchmodal();
-          }
-        
-        
-})
-
-let error=0;
-
 function isformcomplete(){
   //start function///
 
@@ -163,7 +139,7 @@ function isformcomplete(){
     error+=1;
   }
 
-  if (bd==""){
+  if (bdate.value=="" || age<16){
     daten.style.display="inline";
     error+=1;
   }
@@ -194,5 +170,27 @@ function isformcomplete(){
  //end function/// 
 
 }
+
+
+
+
+///CODE////
+
+let error=0;
+
+form.addEventListener("submit", (event) => {
+  
+        event.preventDefault();
+
+       
+
+       if(isformcomplete()===true){
+          switchmodal();
+          }
+        
+        
+})
+
+
 
 
