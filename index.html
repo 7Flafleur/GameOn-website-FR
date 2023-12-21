@@ -18,13 +18,13 @@
       <img class="header-logo" alt="logo" src="Logo.png"  />
     </div>
     <div class="main-navbar">
-      
-      
-      <a href="#"><span>Détails de l'évènement</span></a>
-      <a href="#"><span>À propos</span></a>
-      <a href="#"><span>Contact</span></a>
-      <a href="#"><span>Évènements passés</span></a>
-      <a href="javascript:void(0);" class="icon" onclick="editNav()">
+      <div class="links">
+        <a href="#"><span>Détails de l'évènement</span></a>
+        <a href="#"><span>À propos</span></a>
+        <a href="#"><span>Contact</span></a>
+        <a href="#"><span>Évènements passés</span></a>
+      </div>
+      <a href="#" class="icon" id="hamburger">
         <i class="fa fa-bars"></i>
       </a>
     </div>
@@ -69,8 +69,8 @@
               
             >
               <div
-                class="formData"                   data-error="Veuillez entrer deux caractères ou plus!"
-                data-error-visible="true">
+                class="formData" id="fistnameerror" data-error="Veuillez entrer deux caractères ou plus!"
+                data-error-visible="false">
                 <span class="inputName"><label for="first">Prénom</label> </span> 
                 <input
                   class="text-control noms"
@@ -82,7 +82,7 @@
                 <br>
               </div>
               <div
-                class="formData" data-error="Veuillez entrer deux caractères ou plus!" data-error-visible="true">
+                class="formData" id="lastnameerror" data-error="Veuillez entrer deux caractères ou plus!" data-error-visible="false">
                 <span class="inputName"><label for="last" >Nom</label></span>
                 <input
                   class="text-control noms"
@@ -92,7 +92,7 @@
                 />
               </div>
               <div
-                class="formData"  data-error="Merci de renseigner un email valide!" data-error-visible="true">
+                class="formData" id="emailerror" data-error="Merci de renseigner un email valide!" data-error-visible="false">
                 <span class="inputName">
                   <label for="email" >E-mail</label>
                   
@@ -104,7 +104,7 @@
                 />
               </div>
               <div
-                class="formData" data-error="Merci d'entrer une date de naissance valide!" data-error-visible="true">
+                class="formData" id="doberror" data-error="Merci d'entrer une date de naissance valide!" data-error-visible="false">
                 <span class="inputName" id="bday"><label  for="birthdate">Date de naissance</label><br></span>
                 <input
                   class="text-control"
@@ -114,13 +114,13 @@
                 />
               </div>
               <div
-                class="formData" data-error="Merci d'entrer un nombre valide!" data-error-visible="true">
+                class="formData" id="historyerror" data-error="Merci d'entrer un nombre valide!" data-error-visible="false">
                 <label for="quantity" >À combien de tournois GameOn avez-vous déjà participé ?</label><br>
                 <input type="number" class="text-control" id="quantity" name="quantity"> <span class="invalidInput" id="nombre"></span>
               </div>
               <p class="text-label">A quel tournoi souhaitez-vous participer cette année ?</p>
               <div
-                class="formData " data-error="Merci de choisir une option! " data-error-visible="true">
+                class="formData" id="locationerror" data-error="Merci de choisir une option! " data-error-visible="true">
                 <input
                   class="checkbox-input"
                   type="radio"
@@ -191,7 +191,7 @@
               <div class="invalidInput" id="nolocation"> </div>
 
               <div
-                class="formData trms" data-error="Merci d'accepter les termes et conditions!" data-error-visible="true">
+                class="formData trms" id="termserror" data-error="Merci d'accepter les termes et conditions!" data-error-visible="false">
                 <input
                   class="checkbox-input"
                   type="checkbox"
@@ -211,8 +211,6 @@
                   Je souhaite être prévenu des prochains évènements.
                 </label>
                 <br>
-              <!--single error message  <div class="invalidInput singlemesg" >Invalid input!</div> -->
-
               </div>
               <input
                 class="btn-submit closes"

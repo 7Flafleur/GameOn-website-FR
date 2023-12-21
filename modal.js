@@ -1,17 +1,22 @@
-function editNav() {
-  let x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
+
 
 // DOM Elements////////////
 
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
 const formData = document.querySelectorAll(".formData");
+
+//open topnav from hamburger icon
+
+const hamburger = document.getElementById("hamburger");
+
+hamburger.addEventListener("click",editNav)
+
+const headerlogo = document.querySelector(".header-logo");
+
+headerlogo.addEventListener("click",closeNav);
+
+
 
 //concerns closing modal
 const cross = document.getElementById("cross");
@@ -33,15 +38,13 @@ const tournaments = document.getElementById("quantity");
 const locations = document.getElementsByName("location");
 const terms = document.querySelector("#checkbox1");
 
-//divs to display on error///
-const prenom=document.getElementById("prenom")
-const nom= document.getElementById("nom")
-const mel =document.getElementById("mel")
-const daten= document.getElementById("daten");
-const nombre =document.getElementById("nombre")
-const  noterms=document.getElementById("noterms")
-const nolocation=document.getElementById("nolocation");
-
+//specific error messages if visible///
+const firstnameerror=document.getElementById("firstnameerror")
+const lastnameerror=document.getElementById("lastnameerror") ;
+const emailerror=document.getElementById("emailerror");
+const doberror=document.getElementById("doberror");
+const historyerror=document.getElementById("historyerror");
+const locationerror=document.getElementById("locationerror");
 
 //regex
 
@@ -81,6 +84,30 @@ first.addEventListener("focus",firstname)
 
 
 /////////////////////////////FUNCTIONS///////////////////////
+function editNav() {
+  let x = document.getElementById("myTopnav");
+ 
+  if (x.className === "topnav") {
+    x.className += " responsive";
+    // document.querySelector(".icon").style.opacity="0";
+    
+  } else {
+    x.className = "topnav";
+  }
+}
+
+function closeNav() {
+  let x = document.getElementById("myTopnav");
+  let h = document.querySelector(".icon")
+ 
+  if (x.className == "responsive") {
+    x.className -= "responsive";
+    h.style.color="green";
+    
+  } else {
+    x.className = "topnav ";
+  }
+}
 
 
 
