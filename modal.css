@@ -532,6 +532,8 @@ footer {
 }
 
 
+
+
 @media screen and (max-width: 800px) {
   .hero-section {
     display: block;
@@ -572,7 +574,41 @@ footer {
   }
 }
 
+@media screen and (max-width: 768px) {
+  .topnav a {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+
+
 /*VERSION MOBILE*/
+
+@media screen and (max-width: 540px) {
+  .topnav a {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+    margin-top: -15px;
+  }
+} 
+
 
 @media screen and (max-width: 540px) {
   #mytopnav {
