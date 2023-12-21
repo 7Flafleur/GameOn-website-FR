@@ -58,7 +58,11 @@ img {
   text-decoration: underline;
 }
 
-.topnav a.active {
+#hamburger:hover{
+  background-color: unset;
+}
+
+.topnav a.active  {
   background-color: #ff0000;
   color: #ffffff;
   border-radius: 15px;
@@ -585,14 +589,18 @@ footer {
 @media screen and (max-width: 768px) {
   .topnav.responsive {position: relative;}
   .topnav.responsive .icon {
-    position: absolute;
+    display:none;
+    /* position: absolute;
     right: 0;
-    top: 0;
+    top: 0; */
   }
   .topnav.responsive a {
+    position: relative;
     float: none;
     display: block;
     text-align: left;
+    font-size: medium;
+    right: 0;
   }
 }
 

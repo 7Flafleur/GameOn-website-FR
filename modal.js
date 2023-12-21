@@ -98,11 +98,11 @@ function editNav() {
 
 function closeNav() {
   let x = document.getElementById("myTopnav");
-  let h = document.querySelector(".icon")
+  let h = document.querySelector(".fa")
  
   if (x.className == "responsive") {
     x.className -= "responsive";
-    h.style.color="green";
+    h.style.color="fff";
     
   } else {
     x.className = "topnav ";
