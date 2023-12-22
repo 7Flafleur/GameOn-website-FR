@@ -45,9 +45,11 @@ const emailerror=document.getElementById("emailerror");
 const doberror=document.getElementById("doberror");
 const historyerror=document.getElementById("historyerror");
 const locationerror=document.getElementById("locationerror");
+const termserror=document.getElementById("termserror")
 
 //regex
 
+let twocaracters=new RegExp("//")
 let regexmel=new RegExp("[a-z0-9._-]+@[a-z0-9._-]+\.[a-z0-9._-]+")
 let tournamentsnb=new RegExp("^[0123456789]+")
 
@@ -64,19 +66,18 @@ abientot.addEventListener("click",closeModal);
 
 //check validity on change
 
-  
-// last.addEventListener();
-// mail.addEventListener();
-// bdate.addEventListener();
-// tournaments.addEventListener();
-// locations.addEventListener();
-// terms.addEventListener();
+first.addEventListener("blur", firstnamenonvalid);  
+last.addEventListener("blur",lastnamenonvalid);
+mail.addEventListener("blur",melnonvalid);
+bdate.addEventListener("blur",dobnonvalid);
+tournaments.addEventListener("blur",historynonvalid);
+terms.addEventListener("blur",termsunchecked);
 
 //reinit validitycheck on focus
 
-first.addEventListener("change", firstname)
 
-first.addEventListener("focus",firstname)
+
+
 
 
 
@@ -143,39 +144,49 @@ function switchmodal(){
 
 
 
-function firstname(){
+function firstnamenonvalid(){
   if (first.value.length<2){
-    prenom.style.display="inline";
-    error+=1;
+    firstnameerror.setAttribute("data-error-visible","true")
+  }
+  else{
+    firstnameerror.setAttribute("data-error-visible","false")
   }
 };
 
-function lastname(){
+function lastnamenonvalid(){
   if (last.value.length<2){
-    nom.style.display="inline";
-    error+=1;
+lastnameerror.setAttribute("data-error-visible","true")
+  }
+  else{
+    lastnameerror.setAttribute("data-error-visible","false")
   }
 };
 
-function melcheck(){
+function melnonvalid(){
   if(!regexmel.test(mail.value)){
-    mel.style.display="inline";
-    error+=1;
+emailerror.setAttribute("data-error-visible","true");
+  }
+  else{
+    emailerror.setAttribute("data-error-visible","false")
   }
 };
 
-function dob(){
+function dobnonvalid(){
   if (bdate.value=="" ){
-    daten.style.display="inline";
-    error+=1;
+doberror.setAttribute("data-error-visible","true");
+  }
+  else{
+    doberror.setAttribute("data-error-visible","false")
   }
 
 };
 
-function history(){
+function historynonvalid(){
   if (!tournamentsnb.test(tournaments.value)){
-    nombre.style.display="inline";
-    error+=1;
+historyerror.setAttribute("data-error-visible","true");
+  }
+  else{
+    historyerror.setAttribute("data-error-visible","false")
   }
 };
 
@@ -191,21 +202,33 @@ function onechecked(){
   }
 }
 
-function notchecked(){
+function nolocationchecked(){
   if (!onechecked())  {
-    nolocation.style.display="inline";
-    error+=1;
-  };
+locationerror.setAttribute("data-error-visible","true");
+  }
+  else{
+    locationerror.setAttribute("data-error-visible","false")
+  }
 }
 
 function termsunchecked(){
   if(!terms.checked){
-    noterms.style.display="inline";
-    error+=1;
+termserror.setAttribute("data-error-visible","true");
+  }
+  else{
+    termserror.setAttribute("data-error-visible","false")
   }
 };
 
-
+function iserrorfree(nodelist, attributeName) {
+  for (const node of nodelist) {
+    
+    if (node.hasAttribute(attributeName) && node.getAttribute(attributeName) === 'false') {
+      return true; // field is filled out without errors
+    }
+  }
+  return false; // no field is error-free, all fields are empty
+}
 
 
 
@@ -218,63 +241,17 @@ form.addEventListener("submit", (event) => {
   
         event.preventDefault();
 
-       
+        
+  if (firstnamenonvalid() || lastnamenonvalid() || melnonvalid() || dobnonvalid() || historynonvalid() || nolocationchecked() || termsunchecked() )
+  {return false}
+  else{
+    switchmodal();
+  }
 
-       if(isformcomplete()===true){
-          switchmodal();
-          }
-        
 
         
-        
+   
 })
 
-let error=0;
-
-function isformcomplete(){
-  //start function///
-
-  //first name
-  if (firstname()){
-    error+=1;
-  }
-
-
-  //last name
-  if (lastname()){
-    error+=1;
-  }
-
-
-  if(melcheck()){
-    error+=1;
-  }
-
-  if (dob() ){
-    error+=1;
-  }
-
-
-  if (history()){
-    error+=1;
-  }
-
-  if (notchecked())  {
-      error+=1;
-    };
-
-
-  if(termsunchecked){
-    error+=1;
-  }
-  
-  if (error !=0){
-    return false;
-  }
-  return true;
-  
- //end function/// 
-
-}
 
 
