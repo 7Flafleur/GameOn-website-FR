@@ -12,9 +12,19 @@ const hamburger = document.getElementById("hamburger");
 
 hamburger.addEventListener("click",editNav)
 
-const headerlogo = document.querySelector(".header-logo");
 
-headerlogo.addEventListener("click",closeNav);
+//close topnav on click
+
+document.addEventListener("click", function (event) {
+  const myTopnav = document.getElementById("myTopnav");
+  const mainnavbar = document.getElementById("main-navbar")
+
+  // Check if target is outside of main navbar
+  if (!mainnavbar.contains(event.target) && myTopnav.classList.contains("responsive")) {
+    closeNav();
+  }
+});
+
 
 
 
@@ -73,14 +83,6 @@ bdate.addEventListener("blur",dobnonvalid);
 tournaments.addEventListener("blur",historynonvalid);
 terms.addEventListener("blur",termsunchecked);
 
-//reinit validitycheck on focus
-
-
-
-
-
-
-
 
 
 
@@ -90,7 +92,7 @@ function editNav() {
  
   if (x.className === "topnav") {
     x.className += " responsive";
-    // document.querySelector(".icon").style.opacity="0";
+    
     
   } else {
     x.className = "topnav";
@@ -234,15 +236,7 @@ return true;
   }
 };
 
-// function iserrorfree(nodelist, attributeName) {
-//   for (const node of nodelist) {
-    
-//     if (node.hasAttribute(attributeName) && node.getAttribute(attributeName) === 'false') {
-//       return true; // field is filled out without errors
-//     }
-//   }
-//   return false; // no field is error-free, all fields are empty
-// }
+
 
 function isformcomplete(){
   if ( firstnamenonvalid() || lastnamenonvalid() || melnonvalid() || dobnonvalid() || historynonvalid() || nolocationchecked() || termsunchecked() ){
