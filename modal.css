@@ -626,8 +626,13 @@ footer {
   }
 
   .header-logo {
-    width: 209px;
-    height: 29px;
+    height:19px;
+    padding-left: unset;
+    width:110px;
+    padding-top: unset;
+
+    
+    
     
   }
 
@@ -681,9 +686,10 @@ footer {
     display: block;
     margin-top: -15px;
   }
-  .header-logo {
+  .header-logo .img{
     width: auto;
     height: 25px;
+    padding-left: unset;
   }
 
   .fa{
@@ -695,7 +701,7 @@ footer {
   }
 
   .fa::before {
-    font-size: 25px;;
+    font-size: 20px;
   }
 
   .hero-content {
@@ -716,7 +722,7 @@ footer {
     font-family: DM Sans;
     font-size: 40px;
     font-style: bold;
-    font-weight: 600;
+    font-weight: 500;
     line-height: normal;
   }
 
@@ -730,7 +736,7 @@ footer {
     font-weight: 400;
     line-height: normal;
     padding: 0;
-    word-spacing: 5px;
+    word-spacing: 3px;
     margin-top: 20px;
   }
 
