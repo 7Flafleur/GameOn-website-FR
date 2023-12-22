@@ -147,36 +147,44 @@ function switchmodal(){
 function firstnamenonvalid(){
   if (first.value.length<2){
     firstnameerror.setAttribute("data-error-visible","true")
+    return true;
   }
   else{
     firstnameerror.setAttribute("data-error-visible","false")
+    return false;
   }
 };
 
 function lastnamenonvalid(){
   if (last.value.length<2){
 lastnameerror.setAttribute("data-error-visible","true")
+return true;
   }
   else{
     lastnameerror.setAttribute("data-error-visible","false")
+    return false;
   }
 };
 
 function melnonvalid(){
   if(!regexmel.test(mail.value)){
 emailerror.setAttribute("data-error-visible","true");
+return true;
   }
   else{
     emailerror.setAttribute("data-error-visible","false")
+    return false;
   }
 };
 
 function dobnonvalid(){
   if (bdate.value=="" ){
 doberror.setAttribute("data-error-visible","true");
+return true;
   }
   else{
     doberror.setAttribute("data-error-visible","false")
+    return false;
   }
 
 };
@@ -184,9 +192,11 @@ doberror.setAttribute("data-error-visible","true");
 function historynonvalid(){
   if (!tournamentsnb.test(tournaments.value)){
 historyerror.setAttribute("data-error-visible","true");
+return true;
   }
   else{
     historyerror.setAttribute("data-error-visible","false")
+    return false;
   }
 };
 
@@ -205,31 +215,43 @@ function onechecked(){
 function nolocationchecked(){
   if (!onechecked())  {
 locationerror.setAttribute("data-error-visible","true");
+return true;
   }
   else{
     locationerror.setAttribute("data-error-visible","false")
+    return false;
   }
 }
 
 function termsunchecked(){
   if(!terms.checked){
 termserror.setAttribute("data-error-visible","true");
+return true;
   }
   else{
     termserror.setAttribute("data-error-visible","false")
+    return false;
   }
 };
 
-function iserrorfree(nodelist, attributeName) {
-  for (const node of nodelist) {
+// function iserrorfree(nodelist, attributeName) {
+//   for (const node of nodelist) {
     
-    if (node.hasAttribute(attributeName) && node.getAttribute(attributeName) === 'false') {
-      return true; // field is filled out without errors
-    }
-  }
-  return false; // no field is error-free, all fields are empty
-}
+//     if (node.hasAttribute(attributeName) && node.getAttribute(attributeName) === 'false') {
+//       return true; // field is filled out without errors
+//     }
+//   }
+//   return false; // no field is error-free, all fields are empty
+// }
 
+function isformcomplete(){
+  if ( firstnamenonvalid() || lastnamenonvalid() || melnonvalid() || dobnonvalid() || historynonvalid() || nolocationchecked() || termsunchecked() ){
+    return false;
+  }
+  else{
+    return true;
+  }
+}
 
 
 ///CODE////
@@ -241,15 +263,21 @@ form.addEventListener("submit", (event) => {
   
         event.preventDefault();
 
-        
-  if (firstnamenonvalid() || lastnamenonvalid() || melnonvalid() || dobnonvalid() || historynonvalid() || nolocationchecked() || termsunchecked() )
-  {return false}
-  else{
-    switchmodal();
-  }
+        firstnamenonvalid();
+        lastnamenonvalid();
+        melnonvalid();
+        dobnonvalid();
+        historynonvalid();
+        nolocationchecked();
+        termsunchecked();
 
 
-        
+
+
+        if(isformcomplete()){
+          switchmodal()
+        }
+     
    
 })
 
